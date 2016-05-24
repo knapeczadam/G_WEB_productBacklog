@@ -12,49 +12,52 @@
     }
 })();
 
+(function loggedIn() {
+    var x = document.cookie;
+
+    console.log(x);
+    if(x == 'logged=true'){
+        window.open('TestIndex.html');
+    }
+
+})();
+
 function check(form) {
 
     var user1name = localStorage.getItem("user1name");
     var user1pass = localStorage.getItem("user1pass");
     var user2name = localStorage.getItem("user2name");
     var user2pass = localStorage.getItem("user2pass");
-    if (!getCookie(user1name)){
+    //deleteCookie();
+    if (document.cookie != 'logged=true'){
         if (form.userName.value == user1name && form.password.value == user1pass) {
             window.open('TestIndex.html');
             if (form.rememberme.checked) {
-                setCookie(user1name,user1pass)
+                document.cookie = 'logged=true';
             }
         } else if (form.userName.value == user2name && form.password.value == user2pass) {
             window.open('TestIndex.html');
+            if (form.rememberme.checked) {
+                document.cookie = 'logged=true';
+            }
         }
         else {
             alert("Error password or Username");
         }
-    } else {
-        window.open('TestIndex.html');
     }
+        console.log(document.cookie);
 }
 
-function setCookie(uName, uPass ) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+d.toUTCString();
-    document.cookie = uName + "=" + uPass + "; " + expires;
-}
-
-function getCookie(uName) {
-    var name = uName;
-    var ca = document.cookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(uName.length, c.length);
+function deleteCookie() {
+    expireAt = new Date;
+    expireAt.setMonth(expireAt.getMonth() - 1);
+    if (document.cookie != "")
+    {
+        crumbs = document.cookie.split(";");
+        for(i=0; i < crumbs.length; i++)
+        {
+            crumbName = crumbs[i].split("=")[0];
+            document.cookie = crumbName + "=;expires=" + expireAt.toGMTString();
         }
     }
-    return "";
 }
-
-
