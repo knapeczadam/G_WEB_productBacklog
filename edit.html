@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit backlog item</title>
+</head>
+<body>
+    <h4>Add or edit backlog item</h4>
+    <div id="edit">
+        <div class="titlerow">
+            <span class="order">
+                <input type="text" autofocus placeholder="Order"/>
+            </span>
+            <span class="title">
+                <input type="text" placeholder="Title"/>
+            </span>
+            <span class="state">
+                <select name="state" id="itemState">
+                    <option value="new">New</option>
+                    <option value="approved">Approved</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="done">Done</option>
+                </select>
+                <label for="itemState">State</label>
+            </span>
+        </div>
+        <div class="details">
+            <div id="left">
+                <span class="description">
+                    <input type="text" placeholder="Description"/>
+                </span>
+                <span class="acceptance">
+                    <input type="text" placeholder="Acceptance criteria"/>
+                </span>
+            </div>
+            <div id="right">
+                <span class="effort">
+                    <input type="number" placeholder="Effort"/>
+                </span>
+                <span class="priority">
+                    <input type="number" placeholder="Priority"/>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
