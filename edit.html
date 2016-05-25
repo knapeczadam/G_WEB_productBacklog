@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit backlog item</title>
+    <link rel="stylesheet" type="text/css" href="CSS/editstyle.css">
+</head>
+<body>
+    <h4>Add or edit backlog item</h4>
+    <div id="edit">
+        <div class="titlerow">
+            <input type="text" id="itemOrder"/>
+            <input type="text" id="itemTitle" autofocus placeholder="Title"/>
+            <select name="state" id="itemState">
+                <option value="new">New</option>
+                <option value="approved">Approved</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="done">Done</option>
+            </select>
+            <span>State</span>
+
+        </div>
+        <br/>
+        <div class="details">
+            <div id="left">
+                <div class="description">
+                    <textarea id="itemDescription" placeholder="Description" rows="15" cols="72"></textarea>
+                </div>
+                <br/>
+                <div class="acceptance">
+                    <textarea id="itemAcceptance" placeholder="Acceptance criteria" rows="15" cols="72">
+
+                    </textarea>
+                </div>
+            </div>
+            <div id="right">
+                    <div class="effort">
+
+                        <span>Effort&nbsp;&nbsp;&nbsp;</span>
+                        <input type="number" id="itemEffort" placeholder="Effort"/>
+                    </div>
+                    <div class="priority">
+                        <span>Priority</span>
+                        <input type="number" id="itemPriority" placeholder="Priority"/>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <span id="saveBtn">Save</span>
+    <script type="text/javascript" src="backlogic.js"></script>
+    <script>
+        function save() {
+            var sabeButton = document.querySelector("saveBtn");
+            document.addEventListener("click", saveBacklogItem(locStorage, id));
+    }
+    </script>
+</body>
+</html>

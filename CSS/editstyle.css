@@ -1,0 +1,35 @@
+#left {
+    float: left;
+    width: 50%;
+}
+#itemOrder {
+    width: 40px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#itemTitle {
+    height: 60px;
+    width: 35%;
+    font-weight: 700;
+    font-size: x-large;
+    font-family: "Courier New";
+}
+
+#itemState {
+    margin-left: 100px;
+}
+
+#saveBtn {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-family: serif;
+    border: 1px solid blue;
+}
+
+#saveBtn:hover {
+    background-color: lightblue;
+    cursor: default;
+}

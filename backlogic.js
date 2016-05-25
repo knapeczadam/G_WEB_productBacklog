@@ -96,3 +96,22 @@ function addItem()
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
 }
+
+function saveBacklogItem(locStorage, id) {
+    var newOtem = locStorage.getItem(id);
+    var title = document.querySelector("#itemTitle").value;
+    var orderSelect = document.querySelector("#itemState");
+    var selectedState = orderSelect.options[orderSelect.selectedIndex].value;
+    var description = document.querySelector("#itemDescription").value;
+    var acceptance = document.querySelector("#itemAcceptance").value;
+    var effort = document.querySelector("#itemEffort").value;
+    var priority= document.querySelector("#itemPriority").value;
+    newItem.title = title;
+    newItem.status = selectedState;
+    newItem.des = description;
+    newItem.acceptance = acceptance;
+    newItem.effort = effort;
+    newItem.priority = priority;
+    locStorage.setItem(id, newItem);
+    window.open("backlog.html");
+}
