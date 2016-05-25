@@ -29,45 +29,45 @@ function addItem()
     backlogChildLi.appendChild(createOrderSpan);
 
 
-    var titleBox = document.getElementById("itemTitle").value;
+    var createTitleSpan = document.createElement("span"),
+        titleBox = document.getElementById("itemTitle").value,
+        titleSpanContent = document.createTextNode(titleBox);
+    createTitleSpan.className = "title";
     if(isEmpty(titleBox))
     {
-        var createTitleSpan = document.createElement("span"),
-            titleSpanContent = document.createTextNode(titleBox);
-        createTitleSpan.className = "title";
         createTitleSpan.appendChild(titleSpanContent);
         backlogChildLi.appendChild(createTitleSpan);
     }
 
 
-    var stateBox = document.getElementById("itemState").value;
+    var createStateSpan = document.createElement("span"),
+        stateBox = document.getElementById("itemState").value,
+        stateSpanContent = document.createTextNode(stateBox);
+    createStateSpan.className = "state";
     if(isEmpty(stateBox))
     {
-        var createStateSpan = document.createElement("span"),
-            stateSpanContent = document.createTextNode(stateBox);
-        createStateSpan.className = "state";
         createStateSpan.appendChild(stateSpanContent);
         backlogChildLi.appendChild(createStateSpan);
     }
 
 
-    var effortBox = document.getElementById("itemEffort").value;
+    var createEffortSpan = document.createElement("span"),
+        effortBox = document.getElementById("itemEffort").value,
+        effortSpanContent = document.createTextNode(effortBox);
+    createEffortSpan.className = "effort";
     if(isEmpty(effortBox))
     {
-        var createEffortSpan = document.createElement("span"),
-            efforSpanContent = document.createTextNode(effortBox);
-        createEffortSpan.className = "effort";
-        createEffortSpan.appendChild(efforSpanContent);
+        createEffortSpan.appendChild(effortSpanContent);
         backlogChildLi.appendChild(createEffortSpan);
     }
 
 
-    var priorityBox = document.getElementById("itemPriority").value;
+    var createPrioritySpan = document.createElement("span"),
+        priorityBox = document.getElementById("itemPriority").value,
+        prioritySpanContent = document.createTextNode(priorityBox);
+    createPrioritySpan.className = "priority";
     if(isEmpty(priorityBox))
     {
-        var createPrioritySpan = document.createElement("span"),
-            prioritySpanContent = document.createTextNode(priorityBox);
-        createPrioritySpan.className = "priority";
         createPrioritySpan.appendChild(prioritySpanContent);
         backlogChildLi.appendChild(createPrioritySpan);
     }
