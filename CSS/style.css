@@ -1,6 +1,6 @@
 .order {
   float: left;
-  width: 100px;
+  width: 150px;
 }
 
 .title {
@@ -10,17 +10,17 @@
 
 .state {
   float: left;
-  width: 100px;
+  width: 150px;
 }
 
 .effort {
   float: left;
-  width: 100px;
+  width: 150px;
 }
 
 .priority {
   float: left;
-  width: 100px;
+  width: 150px;
 }
 
 .backlog {
@@ -29,21 +29,28 @@
   border: 4px solid black;
   border-radius: 10px;
   padding: 5px;
-  color: #d8d8d8;
+  color: black;
   font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .task {
-  color: gold;
+  color: #d8d8d8;
   width: 400px;
-}
-
-.footerStyle {
 }
 
 html {
     height: 100%;
     background: white;
-    background: radial-gradient(circle, green 20%, grey);
+    background: radial-gradient(circle, #E0E0E0  30%, #E8E8E8 );
     background-size: cover;
+}
+
+footer {
+  margin-left: 200px;
+  background-color: rgba(100, 100, 100, 0.40);
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  color: black;
+  font-family: "Arial Black", Gadget, sans-serif;
 }
