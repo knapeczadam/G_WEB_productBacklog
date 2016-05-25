@@ -4,12 +4,17 @@
 }
 #itemOrder {
     width: 40px;
-    height: 50px;
+    height: 60px;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 #itemTitle {
     height: 60px;
     width: 35%;
+    font-weight: 700;
+    font-size: x-large;
+    font-family: "Courier New";
 }
 
 #itemState {
@@ -20,7 +25,7 @@
     width: 20px;
     height: 20px;
     text-align: center;
-    font-family: "Cambria Math";
+    font-family: serif;
     border: 1px solid blue;
 }
 
