@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit backlog item</title>
-    <link rel="stylesheet" type="text/css" href="editstyle.css">
+    <link rel="stylesheet" type="text/css" href="CSS/editstyle.css">
 </head>
 <body>
     <h4>Add or edit backlog item</h4>
@@ -49,5 +49,12 @@
     <br/>
     <br/>
     <span id="saveBtn">Save</span>
+    <script>
+        function save() {
+            var sabeButton = document.querySelector("saveBtn");
+            document.addEventListener("click", saveBacklogItem(locStorage, id));
+        }
+    </script>
+<script type="text/javascript" src="backlogic.js"></script>
 </body>
 </html>
