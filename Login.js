@@ -4,9 +4,8 @@
         localStorage.clear();
         localStorage.setItem("user1name", "qwe");
         localStorage.setItem("user1pass", "admin");
-        localStorage.setItem("user2name", "bela");
-        localStorage.setItem("user2pass", "engedjbe");
-
+        localStorage.setItem("user2name", "admin");
+        localStorage.setItem("user2pass", "admin");
     } else {
         alert('Sorry no Web Storage support, noob');
     }
@@ -17,7 +16,7 @@
 
     console.log(x);
     if (x == 'logged=true') {
-        window.open('TestIndex.html');
+        window.open('backlog.html');
     }
 
 })();
@@ -30,12 +29,14 @@ function check(form) {
     var user2pass = localStorage.getItem("user2pass");
     if (document.cookie != 'logged=true') {
         if (form.userName.value == user1name && form.password.value == user1pass) {
-            window.open('TestIndex.html');
+            window.open('backlog.html');
+            localStorage.setItem("loggedIn",user1name);
             if (form.rememberme.checked) {
                 document.cookie = 'logged=true';
             }
         } else if (form.userName.value == user2name && form.password.value == user2pass) {
-            window.open('TestIndex.html');
+            window.open('backlog.html');
+            localStorage.setItem("loggedIn",user2name);
             if (form.rememberme.checked) {
                 document.cookie = 'logged=true';
             }
