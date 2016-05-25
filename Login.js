@@ -16,7 +16,7 @@
     var x = document.cookie;
 
     console.log(x);
-    if(x == 'logged=true'){
+    if (x == 'logged=true') {
         window.open('TestIndex.html');
     }
 
@@ -28,8 +28,7 @@ function check(form) {
     var user1pass = localStorage.getItem("user1pass");
     var user2name = localStorage.getItem("user2name");
     var user2pass = localStorage.getItem("user2pass");
-    //deleteCookie();
-    if (document.cookie != 'logged=true'){
+    if (document.cookie != 'logged=true') {
         if (form.userName.value == user1name && form.password.value == user1pass) {
             window.open('TestIndex.html');
             if (form.rememberme.checked) {
@@ -45,19 +44,6 @@ function check(form) {
             alert("Error password or Username");
         }
     }
-        console.log(document.cookie);
+    console.log(document.cookie);
 }
 
-function deleteCookie() {
-    expireAt = new Date;
-    expireAt.setMonth(expireAt.getMonth() - 1);
-    if (document.cookie != "")
-    {
-        crumbs = document.cookie.split(";");
-        for(i=0; i < crumbs.length; i++)
-        {
-            crumbName = crumbs[i].split("=")[0];
-            document.cookie = crumbName + "=;expires=" + expireAt.toGMTString();
-        }
-    }
-}
