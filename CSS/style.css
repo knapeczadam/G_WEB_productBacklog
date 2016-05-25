@@ -1,0 +1,49 @@
+.order {
+  float: left;
+  width: 100px;
+}
+
+.title {
+  float: left;
+  width: 150px;
+}
+
+.state {
+  float: left;
+  width: 100px;
+}
+
+.effort {
+  float: left;
+  width: 100px;
+}
+
+.priority {
+  float: left;
+  width: 100px;
+}
+
+.backlog {
+  margin-left: 200px;
+  background-color: rgba(100, 100, 100, 0.40);
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  color: #d8d8d8;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.task {
+  color: gold;
+  width: 400px;
+}
+
+.footerStyle {
+}
+
+html {
+    height: 100%;
+    background: white;
+    background: radial-gradient(circle, green 20%, grey);
+    background-size: cover;
+}
