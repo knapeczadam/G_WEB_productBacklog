@@ -90,6 +90,6 @@ body {
     border-color: #05a;
 }
 
-.login input[type=checkbox]{
+.login input[type=checkbox] {
     -webkit-transform: scale(3);
 }
