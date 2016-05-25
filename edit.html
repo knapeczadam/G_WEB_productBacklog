@@ -12,6 +12,7 @@
             <input type="text" id="itemOrder" autofocus placeholder="Order"/>
             <input type="text" id="itemTitle" placeholder="Title"/>
             <select name="state" id="itemState">
+                <option value="new"New</option>
                 <option value="approved">Approved</option>
                 <option value="confirmed">Confirmed</option>
                 <option value="done">Done</option>
@@ -34,9 +35,12 @@
             </div>
             <div id="right">
                     <div class="effort">
+
+                        <span>Effort&nbsp;&nbsp;&nbsp;</span>
                         <input type="number" id="itemEffort" placeholder="Effort"/>
                     </div>
                     <div class="priority">
+                        <span>Priority</span>
                         <input type="number" id="itemPriority" placeholder="Priority"/>
                     </div>
             </div>
@@ -44,6 +48,6 @@
     </div>
     <br/>
     <br/>
-    <button id="saveBtn" type="button">Save</button>
+    <span id="saveBtn">Save</span>
 </body>
 </html>
