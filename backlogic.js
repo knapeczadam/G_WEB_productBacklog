@@ -98,28 +98,7 @@ function addItem()
 }
 
 function saveBacklogItem(locStorage, id) {
-    var newItem =
-            {
-                "id": "",
-                "title": "",
-                "status": "",
-                "des": "",
-                "acceptance": "",
-                "priority": "",
-                "effort": "",
-                "tasks": {
-                    "task": [
-                        {
-                            "id": "",
-                            "backlogItemId": "",
-                            "title": "",
-                            "description": "",
-                            "status": ""
-                        }
-                    ]
-                }
-            }
-    //var order = document.querySelector("#itemOrder").value;
+    var newOtem = locStorage.getItem(id);
     var title = document.querySelector("#itemTitle").value;
     var orderSelect = document.querySelector("#itemState");
     var selectedState = orderSelect.options[orderSelect.selectedIndex].value;
