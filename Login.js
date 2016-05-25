@@ -2,9 +2,9 @@
 
     if (typeof(Storage) !== "undefined") {
         localStorage.clear();
-        localStorage.setItem("user1name", "qwe");
+        localStorage.setItem("user1name", "Józsi");
         localStorage.setItem("user1pass", "admin");
-        localStorage.setItem("user2name", "admin");
+        localStorage.setItem("user2name", "Gábor");
         localStorage.setItem("user2pass", "admin");
     } else {
         alert('Sorry no Web Storage support, noob');
@@ -47,4 +47,3 @@ function check(form) {
     }
     console.log(document.cookie);
 }
-
