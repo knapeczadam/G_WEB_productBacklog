@@ -24,7 +24,6 @@
 }
 
 .user {
-  margin-left: 200px;
   background-color: rgba(100, 100, 100, 0.40);
   border: 2px solid black;
   border-radius: 100px;
@@ -34,11 +33,10 @@
 }
 
 .backlog {
-  margin-left: 200px;
   background-color: rgba(100, 100, 100, 0.40);
-  border: 4px solid black;
+  border: 3px solid black;
   border-radius: 10px;
-  padding: 5px;
+  padding: 3px;
   color: black;
   font-family: "Arial Black", Gadget, sans-serif;
 }
@@ -51,12 +49,21 @@
 html {
     height: 100%;
     background: white;
-    background: radial-gradient(circle, #E0E0E0  30%, #E8E8E8 );
+    background: radial-gradient(circle, #CCFFFF  30%, #E8E8E8 );
     background-size: cover;
 }
 
+header {
+  background-color: rgba(100, 100, 100, 0.40);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1px;
+  color: black;
+  font-family: "Arial Black", Gadget, sans-serif;
+  word-spacing: 100px;
+}
+
 footer {
-  margin-left: 200px;
   background-color: rgba(100, 100, 100, 0.40);
   border: 4px solid black;
   border-radius: 10px;
