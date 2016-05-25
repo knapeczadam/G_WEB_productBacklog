@@ -1,0 +1,17 @@
+#left {
+    float: left;
+    width: 50%;
+}
+#itemOrder {
+    width: 30px;
+    height: 50px;
+}
+
+#itemTitle {
+    height: 60px;
+    width: 30%;
+}
+
+#itemState {
+    margin-left: 100px;
+}

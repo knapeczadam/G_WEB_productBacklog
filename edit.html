@@ -3,40 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit backlog item</title>
+    <link rel="stylesheet" type="text/css" href="editstyle.css">
 </head>
 <body>
     <h4>Add or edit backlog item</h4>
     <div id="edit">
         <div class="titlerow">
-            <input type="text" autofocus placeholder="Order"/>
-            <input type="text" placeholder="Title"/>
-            <label for="itemState">State</label>
+            <input type="text" id="itemOrder" autofocus placeholder="Order"/>
+            <input type="text" id="itemTitle" placeholder="Title"/>
             <select name="state" id="itemState">
-                <option value="new">New</option>
                 <option value="approved">Approved</option>
                 <option value="confirmed">Confirmed</option>
                 <option value="done">Done</option>
             </select>
+            <span>State</span>
+
         </div>
+        <br/>
         <div class="details">
             <div id="left">
                 <div class="description">
-                    <input type="text" placeholder="Description"/>
+                    <textarea id="itemDescription" placeholder="Description" rows="15" cols="72"></textarea>
                 </div>
+                <br/>
                 <div class="acceptance">
-                    <input type="text" placeholder="Acceptance criteria"/>
+                    <textarea id="itemAcceptance" placeholder="Acceptance criteria" rows="15" cols="72">
+
+                    </textarea>
                 </div>
             </div>
             <div id="right">
                     <div class="effort">
-                        <input type="number" placeholder="Effort"/>
+                        <input type="number" id="itemEffort" placeholder="Effort"/>
                     </div>
                     <div class="priority">
-                        <input type="number" placeholder="Priority"/>
+                        <input type="number" id="itemPriority" placeholder="Priority"/>
                     </div>
             </div>
         </div>
-        <button id="saveBtn" type="button">Save</button>
     </div>
+    <br/>
+    <br/>
+    <button id="saveBtn" type="button">Save</button>
 </body>
 </html>
