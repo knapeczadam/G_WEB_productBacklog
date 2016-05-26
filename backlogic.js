@@ -13,7 +13,7 @@ function isEmpty(text)
     }
 }
 
-function lengthIsGreaterThanFiveChar(text)
+function lengthIsLessThanFiftyCharacters(text)
 {
     if (text.length <= 50)
     {
@@ -33,57 +33,45 @@ function addItem()
     var backlogChildLi = document.createElement("li"),
         backlogUL = document.getElementsByClassName("backlog");
     backlogChildLi.id = "bi"+date.getTime().toString();
-    backlogUL[0].appendChild(backlogChildLi);
 
     var orderBox = document.getElementById("itemOrder").value;
-    orderBox = orderInc++;
     var createOrderSpan = document.createElement("span");
     createOrderSpan.className = "order";
     backlogChildLi.appendChild(createOrderSpan);
 
 
-    var createTitleSpan = document.createElement("span"),
-        titleBox = document.getElementById("itemTitle").value,
-        titleSpanContent = document.createTextNode(titleBox);
+    var createTitleSpan = document.createElement("span");
+    var titleBox = document.getElementById("itemTitle").value;
+    var titleSpanContent = document.createTextNode(titleBox);
     createTitleSpan.className = "title";
-    if(isEmpty(titleBox) && lengthIsGreaterThanFiveChar(titleBox))
-    {
-        createTitleSpan.appendChild(titleSpanContent);
-        backlogChildLi.appendChild(createTitleSpan);
-    }
+    createTitleSpan.appendChild(titleSpanContent);
+    backlogChildLi.appendChild(createTitleSpan);
+
+
 
 
     var createStateSpan = document.createElement("span"),
         stateBox = document.getElementById("itemState").value,
         stateSpanContent = document.createTextNode(stateBox);
     createStateSpan.className = "state";
-    if(isEmpty(stateBox))
-    {
-        createStateSpan.appendChild(stateSpanContent);
-        backlogChildLi.appendChild(createStateSpan);
-    }
+    createStateSpan.appendChild(stateSpanContent);
+    backlogChildLi.appendChild(createStateSpan);
 
 
     var createEffortSpan = document.createElement("span"),
         effortBox = document.getElementById("itemEffort").value,
         effortSpanContent = document.createTextNode(effortBox);
     createEffortSpan.className = "effort";
-    if(isEmpty(effortBox))
-    {
-        createEffortSpan.appendChild(effortSpanContent);
-        backlogChildLi.appendChild(createEffortSpan);
-    }
+    createEffortSpan.appendChild(effortSpanContent);
+    backlogChildLi.appendChild(createEffortSpan);
 
 
     var createPrioritySpan = document.createElement("span"),
         priorityBox = document.getElementById("itemPriority").value,
         prioritySpanContent = document.createTextNode(priorityBox);
     createPrioritySpan.className = "priority";
-    if(isEmpty(priorityBox))
-    {
-        createPrioritySpan.appendChild(prioritySpanContent);
-        backlogChildLi.appendChild(createPrioritySpan);
-    }
+    createPrioritySpan.appendChild(prioritySpanContent);
+    backlogChildLi.appendChild(createPrioritySpan);
 
 
    var createTaskUl = document.createElement("ul");
@@ -108,6 +96,12 @@ function addItem()
    createTaskStateSpan.className = "taskState";
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
+
+    if(isEmpty(titleBox) && lengthIsLessThanFiftyCharacters(titleBox))
+    {
+        orderBox = orderInc++;
+        backlogUL[0].appendChild(backlogChildLi);
+    }
 }
 
 function saveBacklogItem(locStorage, id) 
