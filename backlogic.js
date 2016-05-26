@@ -50,25 +50,25 @@ function addItem()
 
 
 
-    var createStateSpan = document.createElement("span"),
-        stateBox = document.getElementById("itemState").value,
-        stateSpanContent = document.createTextNode(stateBox);
+    var createStateSpan = document.createElement("span");
+    var   stateBox = document.getElementById("itemState").value;
+    var   stateSpanContent = document.createTextNode(stateBox);
     createStateSpan.className = "state";
     createStateSpan.appendChild(stateSpanContent);
     backlogChildLi.appendChild(createStateSpan);
 
 
-    var createEffortSpan = document.createElement("span"),
-        effortBox = document.getElementById("itemEffort").value,
-        effortSpanContent = document.createTextNode(effortBox);
+    var createEffortSpan = document.createElement("span");
+    var  effortBox = document.getElementById("itemEffort").value;
+    var  effortSpanContent = document.createTextNode(effortBox);
     createEffortSpan.className = "effort";
     createEffortSpan.appendChild(effortSpanContent);
     backlogChildLi.appendChild(createEffortSpan);
 
 
-    var createPrioritySpan = document.createElement("span"),
-        priorityBox = document.getElementById("itemPriority").value,
-        prioritySpanContent = document.createTextNode(priorityBox);
+    var createPrioritySpan = document.createElement("span");
+    var  priorityBox = document.getElementById("itemPriority").value;
+    var  prioritySpanContent = document.createTextNode(priorityBox);
     createPrioritySpan.className = "priority";
     createPrioritySpan.appendChild(prioritySpanContent);
     backlogChildLi.appendChild(createPrioritySpan);
@@ -97,10 +97,22 @@ function addItem()
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
 
+    var itemDescription = document.getElementById("")
+
     if(isEmpty(titleBox) && lengthIsLessThanFiftyCharacters(titleBox))
     {
         orderBox = orderInc++;
         backlogUL[0].appendChild(backlogChildLi);
+        var itemJsonObject = {"backlogs": {"backlog": [{"id": orderBox, "title": titleBox, "status": stateBox, "des": itemDescription,
+                        "acceptance": "never late", "priority": priorityBox, "effort": effortBox, "tasks": {"task": [{"id": "bt1", "backlogItemId": "bi1",
+                                    "title": "title of the task", "description": "desc", "status": "todo"}, {"id": "bt2", "backlogItemId": "bi1",
+                                    "title": "title of the task", "description": "desc", "status": "in progress"}, {"id": "bt3", "backlogItemId": "bi1",
+                                    "title": "title of the task","description": "desc", "status": "done"}]}}, {"id": "bi2", "title": "this is the title of the first backlog",
+                        "status": "new", "des": "this is the description", "acceptance": "never late", "priority": "9", "effort": "5", "tasks": {
+                            "task": [{"id": "bt1", "backlogItemId": "bi2", "title": "title of the task", "description": "desc", "status": "todo"},
+                                {"id": "bt2", "backlogItemId": "bi1", "title": "title of the task", "description": "desc", "status": "in progress"}, {
+                                    "id": "bt3", "backlogItemId": "bi1", "title": "title of the task", "description": "desc", "status": "done"}]}}]}};
+        localStorage.setItem("backlog", itemJsonObject);
     }
 }
 
