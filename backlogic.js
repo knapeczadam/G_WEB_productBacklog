@@ -15,6 +15,19 @@ function isEmpty(text)
     }
 }
 
+function lengthIsGreaterThanFiveChar(text)
+{
+    if (text.length <= 50)
+    {
+        return true;
+    }
+    else
+    {
+        alert('Title is too long! Maximum character is 50!');
+        return false;
+    }
+}
+
 function addItem()
 {
     var date = new Date();
@@ -31,45 +44,45 @@ function addItem()
     backlogChildLi.appendChild(createOrderSpan);
 
 
-    var titleBox = document.getElementById("itemTitle").value;
-    if(isEmpty(titleBox))
+    var createTitleSpan = document.createElement("span"),
+        titleBox = document.getElementById("itemTitle").value,
+        titleSpanContent = document.createTextNode(titleBox);
+    createTitleSpan.className = "title";
+    if(isEmpty(titleBox) && lengthIsGreaterThanFiveChar(titleBox))
     {
-        var createTitleSpan = document.createElement("span"),
-            titleSpanContent = document.createTextNode(titleBox);
-        createTitleSpan.className = "title";
         createTitleSpan.appendChild(titleSpanContent);
         backlogChildLi.appendChild(createTitleSpan);
     }
 
 
-    var stateBox = document.getElementById("itemState").value;
+    var createStateSpan = document.createElement("span"),
+        stateBox = document.getElementById("itemState").value,
+        stateSpanContent = document.createTextNode(stateBox);
+    createStateSpan.className = "state";
     if(isEmpty(stateBox))
     {
-        var createStateSpan = document.createElement("span"),
-            stateSpanContent = document.createTextNode(stateBox);
-        createStateSpan.className = "state";
         createStateSpan.appendChild(stateSpanContent);
         backlogChildLi.appendChild(createStateSpan);
     }
 
 
-    var effortBox = document.getElementById("itemEffort").value;
+    var createEffortSpan = document.createElement("span"),
+        effortBox = document.getElementById("itemEffort").value,
+        effortSpanContent = document.createTextNode(effortBox);
+    createEffortSpan.className = "effort";
     if(isEmpty(effortBox))
     {
-        var createEffortSpan = document.createElement("span"),
-            efforSpanContent = document.createTextNode(effortBox);
-        createEffortSpan.className = "effort";
-        createEffortSpan.appendChild(efforSpanContent);
+        createEffortSpan.appendChild(effortSpanContent);
         backlogChildLi.appendChild(createEffortSpan);
     }
 
 
-    var priorityBox = document.getElementById("itemPriority").value;
+    var createPrioritySpan = document.createElement("span"),
+        priorityBox = document.getElementById("itemPriority").value,
+        prioritySpanContent = document.createTextNode(priorityBox);
+    createPrioritySpan.className = "priority";
     if(isEmpty(priorityBox))
     {
-        var createPrioritySpan = document.createElement("span"),
-            prioritySpanContent = document.createTextNode(priorityBox);
-        createPrioritySpan.className = "priority";
         createPrioritySpan.appendChild(prioritySpanContent);
         backlogChildLi.appendChild(createPrioritySpan);
     }
@@ -86,20 +99,26 @@ function addItem()
 
 
    var createNameSpan = document.createElement("span"),
-       nameSpanContent = document.createTextNode(" AZ ÁNGYOD TÉRGYÉT! ");
+       nameSpanContent = document.createTextNode(" De szép bauxit honnan van?!");
    createNameSpan.className = "name";
     createNameSpan.appendChild(nameSpanContent);
     createTaskChildLi.appendChild(createNameSpan);
 
 
+<<<<<<< HEAD
    var createTaskStateSpan = document.createElement("span"),
        taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
+=======
+   var createTaskStateSpan = document.createElement("span"), 
+       taskStateSpanContent = document.createTextNode(" Keddet szeretem a szombatban!");
+>>>>>>> 05595e45a188cae2eac24b211834f6f6ca6881cf
    createTaskStateSpan.className = "taskState";
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
 }
 
-function saveBacklogItem(locStorage, id) {
+function saveBacklogItem(locStorage, id) 
+{
     var newOtem = locStorage.getItem(id);
     var title = document.querySelector("#itemTitle").value;
     var orderSelect = document.querySelector("#itemState");
