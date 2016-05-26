@@ -1,5 +1,7 @@
 var orderInc = 0;
 
+
+
 function isEmpty(text)
 {
     if(text.length !== 0 && text.trim().length !== 0)
@@ -91,8 +93,13 @@ function addItem()
     createTaskChildLi.appendChild(createNameSpan);
 
 
+<<<<<<< HEAD
+   var createTaskStateSpan = document.createElement("span"),
+       taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
+=======
    var createTaskStateSpan = document.createElement("span"), 
        taskStateSpanContent = document.createTextNode(" Keddet szeretem a szombatban!");
+>>>>>>> 05595e45a188cae2eac24b211834f6f6ca6881cf
    createTaskStateSpan.className = "taskState";
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
@@ -122,4 +129,11 @@ function saveBacklogItem(locStorage, id)
     newItem.priority = priority;
     locStorage.setItem(id, newItem);
     window.open("backlog.html");
+}
+
+
+document.getElementById("newitem").addEventListener("click", newItemHandler);
+function newItemHandler()
+{
+  window.location.href = "edit.html";
 }
