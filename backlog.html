@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="CSS/style.css">
   </head>
 
-  <header>
-    <h3>Order Title State Effort Priority</h3>
-  </header>
-
   <body>
+    <header>
+      <h3>Order Title State Effort Priority</h3>
+    </header>
 
         <div class="backlog">
           <ul style="list-style-type:none">
@@ -126,17 +125,21 @@
         </div>
 
         <div class="user">
+          <p align="center"><input type="button" value="New item" id="newitem"></p>
+          <script type="text/javascript" src="backlogic.js"></script>
+
           <p align="center"  name="loggedInUser" id="loggedName"></p>
+
           <p align="center"><input type="button" value="Log out" id="logout" onclick="deleteCookie()"></p>
           <script type="text/javascript" src="Logout.js"></script>
         </div>
+
+        <footer>
+            <p>
+              BlueDeath | <a href="https://github.com/knapeczadam/G_WEB_productBacklog">GitHub</a>
+            </p>
+        </footer>
+
   </body>
-
-
-  <footer>
-      <p>
-        BlueDeath | <a href="https://github.com/knapeczadam/G_WEB_productBacklog">GitHub</a>
-      </p>
-  </footer>
 
 </html>

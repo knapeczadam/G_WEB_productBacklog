@@ -1,5 +1,7 @@
 var orderInc = 0;
 
+
+
 function isEmpty(text)
 {
     if(text.length !== 0 && text.trim().length !== 0)
@@ -90,7 +92,7 @@ function addItem()
     createTaskChildLi.appendChild(createNameSpan);
 
 
-   var createTaskStateSpan = document.createElement("span"), 
+   var createTaskStateSpan = document.createElement("span"),
        taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
    createTaskStateSpan.className = "taskState";
    createTaskStateSpan.appendChild(taskStateSpanContent);
@@ -114,4 +116,11 @@ function saveBacklogItem(locStorage, id) {
     newItem.priority = priority;
     locStorage.setItem(id, newItem);
     window.open("backlog.html");
+}
+
+
+document.getElementById("newitem").addEventListener("click", newItemHandler);
+function newItemHandler()
+{
+  window.location.href = "edit.html";
 }
