@@ -13,6 +13,19 @@ function isEmpty(text)
     }
 }
 
+function lengthIsGreaterThanFiveChar(text)
+{
+    if (text.length <= 50)
+    {
+        return true;
+    }
+    else
+    {
+        alert('Title is too long! Maximum character is 50!');
+        return false;
+    }
+}
+
 function addItem()
 {
     var date = new Date();
@@ -33,7 +46,7 @@ function addItem()
         titleBox = document.getElementById("itemTitle").value,
         titleSpanContent = document.createTextNode(titleBox);
     createTitleSpan.className = "title";
-    if(isEmpty(titleBox))
+    if(isEmpty(titleBox) && lengthIsGreaterThanFiveChar(titleBox))
     {
         createTitleSpan.appendChild(titleSpanContent);
         backlogChildLi.appendChild(createTitleSpan);
@@ -84,20 +97,21 @@ function addItem()
 
 
    var createNameSpan = document.createElement("span"),
-       nameSpanContent = document.createTextNode(" AZ ÁNGYOD TÉRGYÉT! ");
+       nameSpanContent = document.createTextNode(" De szép bauxit honnan van?!");
    createNameSpan.className = "name";
     createNameSpan.appendChild(nameSpanContent);
     createTaskChildLi.appendChild(createNameSpan);
 
 
    var createTaskStateSpan = document.createElement("span"), 
-       taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
+       taskStateSpanContent = document.createTextNode(" Keddet szeretem a szombatban!");
    createTaskStateSpan.className = "taskState";
    createTaskStateSpan.appendChild(taskStateSpanContent);
     createTaskChildLi.appendChild(createTaskStateSpan);
 }
 
-function saveBacklogItem(locStorage, id) {
+function saveBacklogItem(locStorage, id) 
+{
     var newOtem = locStorage.getItem(id);
     var title = document.querySelector("#itemTitle").value;
     var orderSelect = document.querySelector("#itemState");
