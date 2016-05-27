@@ -1,6 +1,6 @@
 function deleteCookie() {
     document.cookie = 'logged=false';
-    window.location.href = "login.html";
+    window.location.href = "../login.html";
 }
 
 (function () {

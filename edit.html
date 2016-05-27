@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit backlog item</title>
-    <link rel="stylesheet" type="text/css" href="CSS/editstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/editstyle.css">
 </head>
 <body>
     <h4>Add or edit backlog item</h4>
     <div id="edit">
         <div class="titlerow">
             <input type="text" id="itemOrder"/>
-            <input type="text" id="itemTitle" autofocus placeholder="Title"/>
+            <input type="text" id="itemTitle" autofocus maxlength="50" required placeholder="Title"/>
             <select name="state" id="itemState">
                 <option value="new">New</option>
                 <option value="approved">Approved</option>
@@ -49,12 +49,9 @@
     <br/>
     <br/>
     <span id="saveBtn">Save</span>
-    <script type="text/javascript" src="backlogic.js"></script>
+    <script type="text/javascript" src="js/backlogic.js"></script>
     <script>
-        function save() {
-            var sabeButton = document.querySelector("saveBtn");
-            document.addEventListener("click", saveBacklogItem(locStorage, id));
-    }
+        window.onload = edit.initialize();
     </script>
 </body>
 </html>

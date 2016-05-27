@@ -19,7 +19,7 @@ body {
     margin-bottom: 0;
 }
 
-/* The triangle form is achieved by a CSS hack */
+/* The triangle form is achieved by a css hack */
 .login-triangle {
     width: 0;
     margin-right: auto;
