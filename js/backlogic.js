@@ -4,37 +4,37 @@ var backlog = {
     addItem: function (obj) {
 
         var date = new Date();
-
+        var item = JSON.parse(obj);
         var backlogChildLi = document.createElement("li"),
             backlogUL = document.getElementsByClassName("backlog");
         backlogUL[backlogUL.length-1].appendChild(backlogChildLi);
 
         var createOrderSpan = document.createElement("span"),
-            orderSpanContent = document.createTextNode(obj.order);
+            orderSpanContent = document.createTextNode(item.order);
         createOrderSpan.className = "order";
         backlogChildLi.appendChild(createOrderSpan);
 
         var createTitleSpan = document.createElement("span"),
-            titleSpanContent = document.createTextNode(obj.title);
+            titleSpanContent = document.createTextNode(item.title);
         createTitleSpan.className = "title";
         createTitleSpan.appendChild(titleSpanContent);
         backlogChildLi.appendChild(createTitleSpan);
 
         var createStateSpan = document.createElement("span"),
-            stateSpanContent = document.createTextNode(obj.state);
+            stateSpanContent = document.createTextNode(item.status);
         createStateSpan.className = "state";
         createStateSpan.appendChild(stateSpanContent);
         backlogChildLi.appendChild(createStateSpan);
 
         var createEffortSpan = document.createElement("span"),
-            efforSpanContent = document.createTextNode(obj.effort);
+            efforSpanContent = document.createTextNode(item.effort);
         createEffortSpan.className = "effort";
         createEffortSpan.appendChild(efforSpanContent);
         backlogChildLi.appendChild(createEffortSpan);
 
 
         var createPrioritySpan = document.createElement("span"),
-            prioritySpanContent = document.createTextNode(obj.priority);
+            prioritySpanContent = document.createTextNode(item.priority);
         createPrioritySpan.className = "priority";
         createPrioritySpan.appendChild(prioritySpanContent);
         backlogChildLi.appendChild(createPrioritySpan);
@@ -45,19 +45,19 @@ var backlog = {
         backlogChildLi.appendChild(createTaskUl);
 
         var createTaskChildLi = document.createElement("li");
-        createTaskChildLi.id = "bt"+date.getTime().toString();
+        //createTaskChildLi.id = "bt"+date.getTime().toString();
         backlogChildLi.appendChild(createTaskChildLi);
 
-        var createNameSpan = document.createElement("span"),
-            nameSpanContent = document.createTextNode(" AZ ÁNGYOD TÉRGYÉT! ");
+        var createNameSpan = document.createElement("span");
+            //nameSpanContent = document.createTextNode(" AZ ÁNGYOD TÉRGYÉT! ");
         createNameSpan.className = "name";
-        createNameSpan.appendChild(nameSpanContent);
+//        createNameSpan.appendChild(nameSpanContent);
         createTaskChildLi.appendChild(createNameSpan);
 
-        var createTaskStateSpan = document.createElement("span"),
-            taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
+        var createTaskStateSpan = document.createElement("span");
+            //taskStateSpanContent = document.createTextNode(" Sehogy se nyúl ketonbeverő!");
         createTaskStateSpan.className = "taskState";
-        createTaskStateSpan.appendChild(taskStateSpanContent);
+//        createTaskStateSpan.appendChild(taskStateSpanContent);
         createTaskChildLi.appendChild(createTaskStateSpan);
     },
 
@@ -118,13 +118,13 @@ var edit = {
         var accept = document.getElementById("itemAcceptance").value;
         if(isEmpty(titleBox) && lengthIsLessThanFiftyCharacters(titleBox))
         {
-            var itemJsonObject = {"id": orderBox, "order": orderBox, "title": titleBox, "status": stateBox, "des": itemDescription,
-                "acceptance": "never late", "priority": priorityBox, "effort": effortBox, "tasks": {"task": [{"id": "bt1", "backlogItemId": "bi1",
+            var itemJsonObject = {"id": id, "order": orderBox, "title": titleBox, "status": selectedState, "des": desc,
+                "acceptance": accept, "priority": priorityBox, "effort": effortBox, "tasks": {"task": [{"id": "bt1", "backlogItemId": "bi1",
                     "title": "title of the task", "description": "desc", "status": "todo"}, {"id": "bt2", "backlogItemId": "bi1",
                     "title": "title of the task", "description": "desc", "status": "in progress"}, {"id": "bt3", "backlogItemId": "bi1",
                     "title": "title of the task","description": "desc", "status": "done"}]}};
 
-            localStorage.setItem(id, itemJsonObject);
+            localStorage.setItem(id, JSON.stringify(itemJsonObject));
             localStorage.setItem("order", orderBox++);
             window.open("backlog.html", "_self");
         }
